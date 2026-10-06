@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #EEF0F7;
+    --bg-2: #E3E7F2;
+    --panel: #FFFFFF;
+    --panel-2: #F4F6FC;
+    --text: #0B1233;
+    --muted: #525B80;
+    --line: rgba(11, 18, 51, .14);
+    --bar: rgba(238, 240, 247, .78);
+    --insp: #3F6FFF;
+    --shadow: rgba(11, 18, 51, .28);
+    --red: #E4311C;
+    --red-2: #B8210F;
+    --on-red: #FFF4EA;
+    --navy: #0B1233;
+    --cream: #F6F0E6;
+    --o1: #BFE2FF;
+    --o2: #F4C6E6;
+    --o3: #FFEFC2;
+    --o4: #C3F0DA;
+    --holo: linear-gradient(115deg, var(--o1), var(--o2) 28%, var(--o3) 52%, var(--o4) 76%, var(--o1));
+    --grain: .05;
+    --bar-h: 58px;
+    --pad: clamp(20px, 4.4vw, 64px);
+    --display: "Anybody", var(--font-display), "Arial Black", system-ui, sans-serif;
+    --sans: "Geist", var(--font-sans), system-ui, sans-serif;
+    --mono: "Martian Mono", var(--font-mono), monospace;
+    --ease: cubic-bezier(.2, .8, .2, 1);
+    --spring: cubic-bezier(.3, 1.35, .45, 1);
+  }
+
+  :root[data-theme="dark"],
+  .dark {
+    --bg: #0A1030;
+    --bg-2: #0E163C;
+    --panel: #131C48;
+    --panel-2: #1A2456;
+    --text: #F2EBE0;
+    --muted: #9AA2C6;
+    --line: rgba(200, 212, 255, .14);
+    --bar: rgba(10, 16, 48, .75);
+    --insp: #7FA6FF;
+    --shadow: rgba(0, 0, 0, .6);
+    --grain: .09;
+  }
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Cursor Rules */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Grain Animation */
+.grain-overlay {
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: var(--grain);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grainAnim 1.2s steps(6) infinite;
+}
+
+@keyframes grainAnim {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Holographic Header Shift */
+@keyframes holoShift {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.holo-bg {
+  background: var(--holo);
+  background-size: 200% 100%;
+  animation: holoShift 6s linear infinite;
+}
+
+/* Pulsing Ping Dot */
+@keyframes pingAnim {
+  0% { box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.7); }
+  70%, 100% { box-shadow: 0 0 0 10px rgba(61, 220, 132, 0); }
+}
+
+.ping-dot {
+  animation: pingAnim 2.2s infinite;
+}
+
+/* Scroll Cue Animation */
+@keyframes cueAnim {
+  0% { top: -40%; }
+  100% { top: 100%; }
+}
+
+.cue-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -40%;
+  width: 100%;
+  height: 40%;
+  background: var(--text);
+  animation: cueAnim 1.8s var(--ease) infinite;
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1800 {
+  perspective: 1800px;
+  perspective-origin: 50% 35%;
+}
+
+/* Typography styles */
+.font-display {
+  font-family: var(--display);
+}
+
+.font-sans {
+  font-family: var(--sans);
+}
+
+.font-mono {
+  font-family: var(--mono);
+}
+
+/* RAG diagram animations */
+@keyframes ragQAnim {
+  0% { opacity: 0; transform: translateY(8px); }
+  10%, 90% { opacity: 1; transform: none; }
+  100% { opacity: 0; }
+}
+
+.animate-rag-q {
+  animation: ragQAnim 6s ease-in-out infinite;
+}
+
+@keyframes ragFlow1 {
+  0%, 10% { left: 0%; opacity: 0; }
+  20% { opacity: 1; }
+  45% { left: 90%; opacity: 1; }
+  50%, 100% { left: 90%; opacity: 0; }
+}
+
+.animate-flow-1 {
+  animation: ragFlow1 6s infinite;
+}
