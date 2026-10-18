@@ -95,7 +95,7 @@ export default function WorkSection() {
   const project = PROJECTS[safeIndex] || PROJECTS[0];
 
   return (
-    <section id="work" className="relative py-24 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)] overflow-hidden">
+    <section id="work" className="relative py-16 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)] overflow-hidden">
       {/* Section Header & Counter */}
       <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
         <div>
@@ -295,8 +295,8 @@ export default function WorkSection() {
                   key={pIdx}
                   onClick={() => setCurrentIndex(pIdx)}
                   className={`h-2 rounded-full transition-all duration-300 ${safeIndex === pIdx
-                      ? 'w-6 bg-[var(--red)]'
-                      : 'w-2 bg-[var(--line)] hover:bg-[var(--muted)]'
+                    ? 'w-6 bg-[var(--red)]'
+                    : 'w-2 bg-[var(--line)] hover:bg-[var(--muted)]'
                     }`}
                   aria-label={`Go to slide ${pIdx + 1}`}
                 />

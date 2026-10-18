@@ -110,7 +110,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)] bg-[var(--bg-2)]/40">
+    <section id="contact" className="relative py-16 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)] bg-[var(--bg-2)]/40">
       {/* Section Header */}
       <div className="mb-12">
         <span className="font-mono text-xs font-semibold text-[var(--red)] uppercase tracking-widest block mb-2">
@@ -246,7 +246,7 @@ export default function ContactSection() {
           </div>
 
           {isSubmitted ? (
-            <div className="py-12 text-center flex flex-col items-center justify-center space-y-4">
+            <div className="py-16 text-center flex flex-col items-center justify-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-500 mb-2">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
@@ -391,7 +391,7 @@ export default function ContactSection() {
         ))}
       </div>
 
-      {/* Footer copyright */}
+      {/* Footer copyright & Back to top */}
       <div className="mt-16 pt-8 border-t border-[var(--line)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[var(--muted)]">
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 rounded bg-[var(--red)] text-[var(--on-red)] flex items-center justify-center font-display font-black text-xs">
@@ -399,6 +399,16 @@ export default function ContactSection() {
           </div>
           <span>© 2026 Parth Champaneri. All rights reserved.</span>
         </div>
+
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-2 hover:text-[var(--red)] transition-colors cursor-pointer group"
+        >
+          <span>BACK TO TOP</span>
+          <span className="w-6 h-6 rounded-full border border-[var(--line)] flex items-center justify-center group-hover:border-[var(--red)] group-hover:-translate-y-0.5 transition-all">
+            ↑
+          </span>
+        </button>
       </div>
     </section>
   );

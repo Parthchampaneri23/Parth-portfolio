@@ -76,7 +76,7 @@ export default function AboutSection() {
   const words = STATEMENT_TEXT.split(' ');
 
   return (
-    <section id="about" ref={containerRef} className="relative py-24 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
+    <section id="about" ref={containerRef} className="relative py-16 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
       {/* Section Header */}
       <div className="mb-16">
         <span className="font-mono text-xs font-semibold text-[var(--red)] uppercase tracking-widest block mb-2">

@@ -13,6 +13,7 @@ import WorkSection from '@/components/WorkSection';
 import StackSection from '@/components/StackSection';
 import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -57,6 +58,9 @@ export default function Home() {
 
       {/* Fixed Side Minimap Navigation */}
       <Minimap activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      {/* Floating Scroll to Top Button */}
+      <ScrollToTop />
 
       {/* Page Sections */}
       <div className="relative z-10 max-w-7xl mx-auto">

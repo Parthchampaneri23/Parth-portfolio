@@ -38,7 +38,7 @@ const EDUCATION_ITEMS = [
 /* CERTIFICATIONS */
 export default function EducationSection() {
   return (
-    <section id="education" className="relative py-24 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
+    <section id="education" className="relative py-16 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
       {/* Section Header */}
       <div className="mb-16">
         <span className="font-mono text-xs font-semibold text-[var(--red)] uppercase tracking-widest block mb-2">

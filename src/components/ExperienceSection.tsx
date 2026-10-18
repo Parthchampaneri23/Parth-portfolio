@@ -40,7 +40,7 @@ const EXPERIENCES = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="relative py-24 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
+    <section id="experience" className="relative py-16 px-4 sm:px-8 lg:px-16 border-t border-[var(--line)]">
       {/* Section Header */}
       <div className="mb-8">
         <span className="font-mono text-xs font-semibold text-[var(--red)] uppercase tracking-widest block mb-2">
