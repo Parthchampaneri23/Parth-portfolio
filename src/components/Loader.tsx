@@ -39,7 +39,7 @@ export default function Loader({ onFinish }: { onFinish: () => void }) {
         >
           {/* Top info */}
           <div className="flex justify-between items-center text-xs font-mono text-[var(--muted)] pt-[env(safe-area-inset-top,0px)]">
-            <span>PARTH CHAMPANERI // PORTFOLIO 2026</span>
+            <span>PARTH CHAMPANERI</span>
             <span>DAHANU, IN</span>
           </div>
 
